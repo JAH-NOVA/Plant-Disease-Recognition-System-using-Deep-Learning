@@ -1,41 +1,57 @@
+# Plant-Disease-Recognition-System
+Plant Disease Recognition System
 
- # Plant Disease Recognition System
+# Model Setup Instructions
 
-A deep learning based web application that detects plant diseases from leaf images using TensorFlow and Flask.
+To use this project, you need to download a pre-trained model from the given Google Drive link and place it in the `models` directory. Follow the steps below to set it up correctly:
 
-## Features
-- Upload plant leaf image
-- Detect plant disease
-- Deep learning prediction
-- Web interface using Flask
+## Steps to Download and Place the Model
 
-## Technologies Used
-- Python
-- TensorFlow
-- Flask
-- NumPy
-- HTML/CSS
+1. **Download the Model**
+   - Click [here](https://drive.google.com/file/d/1Ond7UzrNOfdAXWedjlZr2sDXYU6MRBuj/view?usp=sharing) to open the Google Drive link.
+   - Click the **Download** button to save the file to your local system.
 
-## Dataset
-PlantVillage Dataset
+2. **Create the Models Folder**
+   - Navigate to the root directory of this project.
+   - Create a folder named `models` if it does not already exist.
+     ```bash
+     mkdir models
+     ```
 
-## How to Run
+3. **Place the Model in the Folder**
+   - Move the downloaded file into the `models` directory.
+     ```bash
+     mv /path/to/downloaded/model models/
+     ```
+     Replace `/path/to/downloaded/model` with the actual path where you downloaded the file.
 
--> Install dependencies
-pip install -r requirements.txt
+4. **Verify the Setup**
+   - Ensure that the model file is correctly placed in the `models` directory by listing the folder's contents:
+     ```bash
+     ls models
+     ```
+     You should see the downloaded model file in the output.
 
--> Run project
-python app.py
+## Usage
 
-## Project Output
-The system predicts diseases such as:
-- Tomato Early Blight
-- Potato Late Blight
-- Apple Scab
-- Corn Rust
-etc.
+1. **Specify the Model File Location**
+   - Open the `app.py` file in a text editor.
+   - Locate line 8, which contains the following code:
+     ```python
+     tf.keras.models.load_model("")
+     ```
+   - Update the empty string with the relative path to the model file. For example:
+     ```python
+     tf.keras.models.load_model("models/your_model_file.keras")
+     ```
+     Replace `your_model_file.keras` with the actual name of the model file you downloaded.
 
-## Future Improvements
-- Medicine recommendation system
-- Accuracy improvement
-- Mobile application integration
+2. **Run the Server**
+   - Open a terminal and navigate to the root directory of this project.
+   - Run the following command to start the server:
+     ```bash
+     python app.py
+     ```
+
+3. **Access the Application**
+   - Once the server is running, follow the instructions displayed in the terminal to access the application in your web browser.
