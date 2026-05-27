@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Model files
+*.h5
+*.keras
+
+# Your environment
+plantenv/
+
+# Upload images
+uploadimages/
